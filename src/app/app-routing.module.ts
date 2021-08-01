@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 
-// @ts-ignore
-// @ts-ignore
-// @ts-ignore
+
 const routes: Routes = [
 
   {
@@ -12,6 +10,7 @@ const routes: Routes = [
     redirectTo: 'performances',
     pathMatch: 'full'
   },
+
   {
     path: 'performances',
     loadChildren: () => import('./performances/performances.module').then( m => m.PerformancesPageModule),
@@ -20,6 +19,10 @@ const routes: Routes = [
   {
     path: 'contact',
     loadChildren: () => import('./contact/contact.module').then(m => m.ContactPageModule),
+  },
+  {
+    path: 'myprofile',
+    loadChildren: () => import('./myprofile/myprofile.module').then(m => m.MyProfilePageModule),
   },
   {
     path: 'log-in',
